@@ -1,0 +1,147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\features\\bombtimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:features\\bombtimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\graphics\\plane3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:graphics\\plane3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\features\\skeletonesp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:features\\skeletonesp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\utils\\offsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:utils\\offsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\core\\kernel32.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:core\\kernel32.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\features\\aimbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:features\\aimbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BombTimer.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\BombTimer.cs",
+              "RelativeDocumentMoniker": "Features\\BombTimer.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\BombTimer.cs",
+              "RelativeToolTip": "Features\\BombTimer.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAAwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T22:25:19.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SkeletonEsp.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\SkeletonEsp.cs",
+              "RelativeDocumentMoniker": "Features\\SkeletonEsp.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\SkeletonEsp.cs",
+              "RelativeToolTip": "Features\\SkeletonEsp.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAEwCwAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T22:24:26.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Plane3D.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Graphics\\Plane3D.cs",
+              "RelativeDocumentMoniker": "Graphics\\Plane3D.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Graphics\\Plane3D.cs",
+              "RelativeToolTip": "Graphics\\Plane3D.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T22:24:25.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Offsets.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Utils\\Offsets.cs",
+              "RelativeDocumentMoniker": "Utils\\Offsets.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Utils\\Offsets.cs",
+              "RelativeToolTip": "Utils\\Offsets.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T22:24:23.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T22:24:21.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Kernel32.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Core\\Kernel32.cs",
+              "RelativeDocumentMoniker": "Core\\Kernel32.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Core\\Kernel32.cs",
+              "RelativeToolTip": "Core\\Kernel32.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T22:23:54.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AimBot.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\AimBot.cs",
+              "RelativeDocumentMoniker": "Features\\AimBot.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\AimBot.cs",
+              "RelativeToolTip": "Features\\AimBot.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAEwEUAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T21:59:32.575Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
