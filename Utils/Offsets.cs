@@ -45,6 +45,9 @@ public abstract class Offsets
     public static int m_flDefuseCountDown;
     public static int m_flC4Blow;
     public static int m_bBeingDefused;
+    public static int m_iActiveIssueIndex;
+    public static int m_iOnlyTeamToVote;
+    public static int m_nVoteOptionCount;
     public const nint m_nCurrentTickThisFrame = 0x34;
 
     public static readonly Dictionary<string, int> Bones = new()
@@ -127,8 +130,9 @@ public abstract class Offsets
                 sourceDataClient.clientdll.classes.C_PlantedC4.fields.m_flDefuseCountDown;
             destData.m_flC4Blow = sourceDataClient.clientdll.classes.C_PlantedC4.fields.m_flC4Blow;
             destData.m_bBeingDefused = sourceDataClient.clientdll.classes.C_PlantedC4.fields.m_bBeingDefused;
-
-
+            destData.m_iActiveIssueIndex = sourceDataClient.clientdll.classes.C_VoteController.fields.m_iActiveIssueIndex;
+            destData.m_iOnlyTeamToVote = sourceDataClient.clientdll.classes.C_VoteController.fields.m_iOnlyTeamToVote;
+            destData.m_nVoteOptionCount = sourceDataClient.clientdll.classes.C_VoteController.fields.m_nVoteOptionCount;
             UpdateStaticFields(destData);
         }
         catch (Exception ex)
@@ -181,6 +185,9 @@ public abstract class Offsets
         m_flDefuseCountDown = data.m_flDefuseCountDown;
         m_flC4Blow = data.m_flC4Blow;
         m_bBeingDefused = data.m_bBeingDefused;
+        m_iActiveIssueIndex = data.m_iActiveIssueIndex;
+        m_iOnlyTeamToVote = data.m_iOnlyTeamToVote;
+        m_nVoteOptionCount = data.m_nVoteOptionCount;
     }
 
     #endregion

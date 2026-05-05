@@ -32,6 +32,8 @@ public class Program :
 
     private BombTimer BombTimer { get; set; } = null!;
 
+    private VoteTeller VoteTeller { get; set; } = null!;
+
     public void Dispose()
     {
         GameProcess.Dispose();
@@ -54,6 +56,9 @@ public class Program :
 
         BombTimer.Dispose();
         BombTimer = default!;
+
+        VoteTeller.Dispose();
+        VoteTeller = default!;
     }
 
     public static void Main()
@@ -86,6 +91,9 @@ public class Program :
         BombTimer = new BombTimer(Graphics);
         if (features.BombTimer) BombTimer.Start();
 
-        SetWindowDisplayAffinity(WindowOverlay!.Window.Handle, 0x00000011); //obs bypass
+        VoteTeller = new VoteTeller(Graphics);
+        VoteTeller.Start();
+
+        // SetWindowDisplayAffinity(WindowOverlay!.Window.Handle, 0x00000011); //obs bypass
     }
 }
