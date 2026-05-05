@@ -18,23 +18,21 @@ namespace CS2Cheat.Features
         private static int _noVotes;
         private static string _voteType = string.Empty;
 
+private static DateTime _lastPrintTime = DateTime.MinValue;
+
         protected override void FrameAction()
         {
-            // 1. Obtenemos el equipo de nuestro jugador local
             var localPlayerPawn = graphics.GameProcess.ModuleClient.Read<IntPtr>(Offsets.dwLocalPlayerPawn);
             if (localPlayerPawn == IntPtr.Zero) return;
-
             var localTeam = graphics.GameProcess.Process.Read<int>(localPlayerPawn + Offsets.m_iTeamNum);
 
-            // 2. Leemos la Entity List
             var entityList = graphics.GameProcess.ModuleClient.Read<IntPtr>(Offsets.dwEntityList);
             if (entityList == IntPtr.Zero) return;
 
             IntPtr voteControllerPtr = IntPtr.Zero;
 
-            // Iteramos la Entity List buscando la entidad del controlador de votos
-            // Empezamos en 64 porque los jugadores ocupan los primeros 64 lugares
-            for (int i = 64; i < 1024; i++)
+            // Buscamos el vote_controller
+            for (int i = 64; i < 8192; i++)
             {
                 var listEntry = graphics.GameProcess.Process.Read<IntPtr>(entityList + (8 * (i >> 9)) + 16);
                 if (listEntry == IntPtr.Zero) continue;
@@ -42,71 +40,54 @@ namespace CS2Cheat.Features
                 var entity = graphics.GameProcess.Process.Read<IntPtr>(listEntry + 120 * (i & 0x1FF));
                 if (entity == IntPtr.Zero) continue;
 
-                // Obtenemos el nombre de diseño de la entidad (designerName)
                 var entityIdentity = graphics.GameProcess.Process.Read<IntPtr>(entity + 0x10);
                 if (entityIdentity == IntPtr.Zero) continue;
 
                 var designerNamePtr = graphics.GameProcess.Process.Read<IntPtr>(entityIdentity + 0x20);
                 if (designerNamePtr == IntPtr.Zero) continue;
-                
-                // Leemos byte por byte hasta encontrar el terminador nulo (0x00)
+
                 var sb = new StringBuilder();
-                for (int j = 0; j < 32; j++) // Leemos hasta un máximo de 32 caracteres por seguridad
+                for (int j = 0; j < 32; j++)
                 {
-                    // Leemos 1 byte en la posición actual
                     byte b = graphics.GameProcess.Process.Read<byte>(designerNamePtr + j);
-
-                    // Si el byte es 0, significa que el string terminó
                     if (b == 0) break;
-
-                    // Convertimos el byte a caracter y lo agregamos
-                    sb.Append((char)b);
+                    if (b >= 32 && b <= 126) sb.Append((char)b);
                 }
 
-                string name = sb.ToString();
-
-                if (name == "vote_controller")
+                if (sb.ToString() == "vote_controller")
                 {
                     voteControllerPtr = entity;
                     break;
                 }
             }
 
-
-            // Si encontramos la entidad, sacamos la data de la votación
+            // Si lo encontramos, vamos a chusmear qué tiene adentro
             if (voteControllerPtr != IntPtr.Zero)
             {
-                var activeIssue = graphics.GameProcess.Process.Read<int>(voteControllerPtr + Offsets.m_iActiveIssueIndex);
-                Console.WriteLine(activeIssue);
-                // -1 o 999 suele significar que no hay votación activa
-                if (activeIssue != -1 && activeIssue != 999)
+                // Leemos crudo con los offsets de tu dump
+                int activeIssue = graphics.GameProcess.Process.Read<int>(voteControllerPtr + 1552);
+                int votingTeam = graphics.GameProcess.Process.Read<int>(voteControllerPtr + 1556);
+                int yesVotes = graphics.GameProcess.Process.Read<int>(voteControllerPtr + 1560);
+                int noVotes = graphics.GameProcess.Process.Read<int>(voteControllerPtr + 1564);
+
+                // IMPRIMIMOS SOLO 1 VEZ POR SEGUNDO PARA NO SPAMEAR
+                if ((DateTime.Now - _lastPrintTime).TotalSeconds >= 1)
                 {
-                    _votingTeam = graphics.GameProcess.Process.Read<int>(voteControllerPtr + Offsets.m_iOnlyTeamToVote);
-
-                    // Verificamos si la votación es en el otro equipo (O es una global: 0)
-                    if (_votingTeam != localTeam && _votingTeam > 1)
-                    {
-                        _isVoting = true;
-                        // Índice 0 son votos a favor, Índice 1 (offset + 4) son votos en contra
-                        _yesVotes = graphics.GameProcess.Process.Read<int>(voteControllerPtr + Offsets.m_nVoteOptionCount);
-                        _noVotes = graphics.GameProcess.Process.Read<int>(voteControllerPtr + Offsets.m_nVoteOptionCount + 4);
-
-                        // Mapeo básico de los index de Issues en CS2
-                        _voteType = activeIssue switch
-                        {
-                            0 => "Kick Player",
-                            1 => "Change Map",
-                            2 => "Surrender",
-                            3 => "Timeout",
-                            4 => "Scramble Teams",
-                            _ => $"Unknown Issue ({activeIssue})"
-                        };
-                        return; // Terminamos el frame
-                    }
+                    Console.WriteLine($"[VOTE DATA] Issue: {activeIssue} | Team: {votingTeam} | Yes: {yesVotes} | No: {noVotes}");
+                    _lastPrintTime = DateTime.Now;
                 }
-            }
 
-            _isVoting = false; // Si no encontró nada, apagamos el cartel
+                // Forzamos temporalmente a que DIBUJE SIEMPRE para ver qué pasa en pantalla
+                _isVoting = true;
+                _votingTeam = votingTeam;
+                _yesVotes = yesVotes;
+                _noVotes = noVotes;
+                _voteType = $"Issue ID: {activeIssue}"; 
+            }
+            else
+            {
+                _isVoting = false;
+            }
         }
 
         public static void Draw(Graphics.Graphics graphics)

@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\utils\\offsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:utils\\offsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\features\\voteteller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:features\\voteteller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\features\\skeletonesp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:features\\skeletonesp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\utils\\offsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|solutionrelative:utils\\offsets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E88C325-4A77-B4D0-3740-696CF147253D}|CS2Cheat.csproj|c:\\users\\asus\\desktop\\fullyexternalcs2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,8 +26,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -34,20 +42,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "SkeletonEsp.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\SkeletonEsp.cs",
+              "RelativeDocumentMoniker": "Features\\SkeletonEsp.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\SkeletonEsp.cs",
+              "RelativeToolTip": "Features\\SkeletonEsp.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAowEoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-05T01:51:17.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Offsets.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Utils\\Offsets.cs",
               "RelativeDocumentMoniker": "Utils\\Offsets.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Utils\\Offsets.cs*",
-              "RelativeToolTip": "Utils\\Offsets.cs*",
-              "ViewState": "AQIAAK4AAAAAAAAAAAAYwL0AAAA1AAAA",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Utils\\Offsets.cs",
+              "RelativeToolTip": "Utils\\Offsets.cs",
+              "ViewState": "AQIAALEAAAAAAAAAAIAwwL0AAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-05T00:20:37.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -60,13 +81,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "VoteTeller.cs",
               "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\VoteTeller.cs",
               "RelativeDocumentMoniker": "Features\\VoteTeller.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\VoteTeller.cs",
-              "RelativeToolTip": "Features\\VoteTeller.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAD4v04AAAAQAAAA",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\FullyExternalCS2\\Features\\VoteTeller.cs*",
+              "RelativeToolTip": "Features\\VoteTeller.cs*",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAUwFwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-04T23:04:44.003Z",
               "EditorCaption": ""
