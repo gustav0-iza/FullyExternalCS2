@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using CS2Cheat.Core;
 using CS2Cheat.Core.Data;
+using CS2Cheat.Data.Game;
 using Process.NET.Native.Types;
 using SharpDX;
 using static System.Diagnostics.Process;
@@ -443,4 +444,26 @@ public static class Utility
     }
 
     #endregion
+
+    public static IntPtr GetEntityFromHandle(GameProcess gameProcess, IntPtr entityListBase, int handle)
+    {
+        // Extract the index from the CHandle
+        int index = handle & 0x7FFF;
+
+        // Calculate the chunk and the offset within the chunk
+        int listEntryIndex = index >> 9; // Equivalent to index / 512
+        int entityIndex = index & 0x1FF; // Equivalent to index % 512
+
+        // 1. Read the pointer to the correct chunk/list
+        // 0x10 is the base offset of the list array, 0x8 is the size of a pointer
+        IntPtr listEntryPtr = gameProcess.Process.Read<IntPtr>(entityListBase + 0x10 + (listEntryIndex * 0x8));
+
+        if (listEntryPtr == IntPtr.Zero) return IntPtr.Zero;
+
+        // 2. Read the actual entity pointer from that chunk
+        // 0x78 (120 in decimal) is the size of each entity entry in the list
+        IntPtr entityPtr = gameProcess.Process.Read<IntPtr>(listEntryPtr + (entityIndex * 0x78));
+
+        return entityPtr;
+    }
 }

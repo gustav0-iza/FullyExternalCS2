@@ -91,8 +91,8 @@ public class Program :
         BombTimer = new BombTimer(Graphics);
         if (features.BombTimer) BombTimer.Start();
 
-        VoteTeller = new VoteTeller(Graphics);
-        VoteTeller.Start();
+        //VoteTeller = new VoteTeller(Graphics);
+        //VoteTeller.Start();
 
         // SetWindowDisplayAffinity(WindowOverlay!.Window.Handle, 0x00000011); //obs bypass
     }

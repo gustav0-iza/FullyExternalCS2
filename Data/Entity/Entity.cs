@@ -20,6 +20,7 @@ public class Entity : EntityBase
     }
 
     protected internal bool IsSpotted { get; private set; }
+    protected internal int SpottedMask { get; private set; }
     protected internal string Name { get; private set; } = string.Empty;
     protected internal int IsInScope { get; private set; }
     protected internal int FlashAlpha { get; private set; }
@@ -63,6 +64,7 @@ public class Entity : EntityBase
 
         _dormant = gameProcess.Process != null && gameProcess.Process.Read<bool>(AddressBase + Offsets.m_bDormant);
         IsSpotted = gameProcess.Process?.Read<bool>(AddressBase + Offsets.m_entitySpottedState + 0x8) ?? false;
+        SpottedMask = gameProcess.Process?.Read<int>(AddressBase + Offsets.m_entitySpottedState + 0xC) ?? 0;
         IsInScope = gameProcess.Process?.Read<int>(AddressBase + Offsets.m_bIsScoped) ?? 0;
         FlashAlpha = gameProcess.Process?.Read<int>(AddressBase + Offsets.m_flFlashDuration) ?? 0;
         Name = gameProcess.Process != null
@@ -70,6 +72,11 @@ public class Entity : EntityBase
             : string.Empty;
 
         return !IsAlive() || UpdateBonePositions(gameProcess);
+    }
+
+    public int IsLocalPlayer(nint playerController)
+    {
+        return ControllerBase == playerController ? Id : -1;
     }
 
     private bool UpdateBonePositions(GameProcess gameProcess)

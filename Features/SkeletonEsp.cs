@@ -38,11 +38,27 @@ public static class SkeletonEsp
     public static void Draw(Graphics.Graphics graphics)
     {
         var player = graphics.GameData.Player;
+        
         foreach (var entity in graphics.GameData.Entities)
         {
-            if (!IsValidEntity(entity, player)) continue;
+            if (entity.AddressBase == player.AddressBase) {
+                player.Index = entity.Id - 1;
+                continue;
+            }
+
+            if (!IsValidEntity(entity, player)) {
+                continue;
+            }
+
+            if (player.Index == 0) continue;
+
+            if (entity.Team == player.Team) continue;
 
             var color = GetTeamColor(entity.Team);
+            if (!((entity.SpottedMask & (1L << player.Index)) != 0)) {
+                color = SharpDX.Color.DimGray;
+            }
+
             DrawSkeleton(graphics, entity, color);
         }
     }

@@ -55,42 +55,49 @@ public static class EspBox
         var (topLeft, bottomRight) = boundingBox;
         if (topLeft.X > bottomRight.X || topLeft.Y > bottomRight.Y) return;
 
+        /*
         var healthPercentage = Math.Clamp(entity.Health / 100f, 0f, 1f);
 
-        graphics.DrawRectangle(color, topLeft, bottomRight);
-
+        //graphics.DrawRectangle(color, topLeft, bottomRight);
         // Health bar
         var healthBarLeft = topLeft.X - 10f - OutlineThickness;
         var healthBarTopLeft = new Vector2(healthBarLeft, topLeft.Y);
         var healthBarBottomRight = new Vector2(healthBarLeft + 6f, bottomRight.Y);
-        DrawHealthBar(graphics, healthBarTopLeft, healthBarBottomRight, healthPercentage);
+        //DrawHealthBar(graphics, healthBarTopLeft, healthBarBottomRight, healthPercentage);
 
         // Health number
+        
         var healthText = entity.Health.ToString();
         var healthX = (int)(bottomRight.X + 2);
         var healthY = (int)(topLeft.Y + (bottomRight.Y - topLeft.Y -
                                          graphics.FontConsolas32.MeasureText(null, healthText, FontDrawFlags.Center)
                                              .Bottom) / 2);
         graphics.FontConsolas32.DrawText(default, healthText, healthX, healthY, Color.White);
-
+        */
         // Weapon
         var weaponIcon = GetWeaponIcon(entity.CurrentWeaponName);
         if (!string.IsNullOrEmpty(weaponIcon))
         {
-            var textSize = graphics.Undefeated.MeasureText(null, weaponIcon, FontDrawFlags.Center);
+            var textSize = graphics.FontConsolas32.MeasureText(null, entity.CurrentWeaponName, FontDrawFlags.Center);
             var weaponX = (int)((topLeft.X + bottomRight.X - textSize.Right) / 2);
             var weaponY = (int)(bottomRight.Y + 2.5f);
-            graphics.Undefeated.DrawText(null, weaponIcon, weaponX, weaponY, Color.White);
+            graphics.FontConsolas32.DrawText(default, entity.CurrentWeaponName, weaponX, weaponY, Color.White);
         }
 
         // Enemy name
         if (graphics.GameData.Player.Team != entity.Team)
         {
             var name = entity.Name ?? "UNKNOWN";
-            var textWidth = graphics.FontConsolas32.MeasureText(null, name, FontDrawFlags.Center).Right + 10f;
+            var textWidth = graphics.FontConsolas32.MeasureText(null, $"{name}", FontDrawFlags.Center).Right + 10f;
             var nameX = (int)((topLeft.X + bottomRight.X) / 2 - textWidth / 2);
-            var nameY = (int)(topLeft.Y - 15f);
-            graphics.FontConsolas32.DrawText(default, name, nameX, nameY, Color.White);
+            var nameY = (int)(topLeft.Y - 20f);
+            graphics.FontConsolas32.DrawText(default, $"{name}", nameX, nameY, Color.White);
+
+            var healthText = entity.Health.ToString();
+            var healthWidth = graphics.FontConsolas32.MeasureText(null, $"[{healthText}]", FontDrawFlags.Center).Right + 10f;
+            var healthX = (int)((topLeft.X + bottomRight.X) / 2 - healthWidth / 2);
+            var healthY = (int)(topLeft.Y - 30f);
+            graphics.FontConsolas32.DrawText(default, $"[{healthText}]", healthX, healthY, Color.White);
         }
 
         // Status flags

@@ -55,10 +55,20 @@ public abstract class EntityBase
         Origin = gameProcess.Process.Read<Vector3>(AddressBase + Offsets.m_vOldOrigin);
         ShotsFired = gameProcess.Process.Read<int>(AddressBase + Offsets.m_iShotsFired);
 
-        CurrentWeapon = gameProcess.Process.Read<IntPtr>(AddressBase + Offsets.m_pClippingWeapon);
-        WeaponIndex = gameProcess.Process.Read<short>(CurrentWeapon + Offsets.m_AttributeManager + Offsets.m_Item +
-                                                      Offsets.m_iItemDefinitionIndex);
-        CurrentWeaponName = Enum.GetName(typeof(WeaponIndexes), WeaponIndex)!;
+
+        IntPtr weaponServices = gameProcess.Process.Read<IntPtr>(AddressBase + Offsets.m_pWeaponServices);
+        int weaponHandle = gameProcess.Process.Read<int>(weaponServices + Offsets.m_hActiveWeapon);
+        IntPtr CurrentWeapon = Utility.GetEntityFromHandle(gameProcess, EntityList, weaponHandle);
+
+        if (CurrentWeapon != IntPtr.Zero) {
+            WeaponIndex = gameProcess.Process.Read<short>(CurrentWeapon + Offsets.m_AttributeManager + Offsets.m_Item + Offsets.m_iItemDefinitionIndex);
+            CurrentWeaponName = Enum.GetName(typeof(WeaponIndexes), WeaponIndex) ?? "Unknown";
+        }
+        else {
+            WeaponIndex = 0;
+            CurrentWeaponName = "None";
+        }
+
         Velocity = gameProcess.Process.Read<Vector3>(AddressBase + Offsets.m_vecAbsVelocity);
 
         return true;

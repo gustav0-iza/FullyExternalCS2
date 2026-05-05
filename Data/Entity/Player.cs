@@ -18,6 +18,7 @@ public class Player : EntityBase
     public Vector3 AimPunchAngle { get; private set; }
     public Vector3 AimDirection { get; private set; }
     public Vector3 EyeDirection { get; private set; }
+    public int Index { get; set; }
     public static int Fov => 90;
     public int FFlags { get; private set; }
 
