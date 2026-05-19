@@ -80,9 +80,9 @@ public abstract class Offsets
         try
         {
             var sourceDataDw = JsonConvert.DeserializeObject<OffsetsDTO>(
-                await FetchJson("https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/offsets.json"));
+                await FetchJson("https://raw.githubusercontent.com/gustav0-iza/FullyExternalCS2/refs/heads/main/offsets.json"));
             var sourceDataClient = JsonConvert.DeserializeObject<ClientDllDTO>(
-                await FetchJson("https://raw.githubusercontent.com/a2x/cs2-dumper/main/output/client_dll.json"));
+                await FetchJson("https://raw.githubusercontent.com/gustav0-iza/FullyExternalCS2/refs/heads/main/client_dll.json"));
 
             dynamic destData = new ExpandoObject();
 
